@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MER-C | Pengiraan Merit SPM (Bahasa Malaysia)</title>
+    <link rel="stylesheet" href="calc.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="lang-indicator">
+        <span>🇲🇾 Bahasa Malaysia</span>
+        <a href="index.html" class="change-lang"><i class="fas fa-globe"></i> Tukar Bahasa</a>
+    </div>
+
+    <div class="pages-container">
+        <div class="page active" id="page1">
+            <div class="page-header">
+                <h1>Pengiraan Merit SPM 2.0</h1>
+                <p class="description">Sistem pengiraan merit untuk kemasukan ke institusi pengajian tinggi</p>
+            </div>
+            
+            <div class="greeting-content">
+                <div class="multi-calculator">
+                    <div class="calc-section">
+                        <h3><i class="fas fa-globe"></i> Mata Pelajaran Universal (40%)</h3>
+                        <div class="input-group"><label>Gred Bahasa Melayu</label>
+                            <select id="bm-grade" class="grade-select">
+                                <option value="0">G (0)</option><option value="2">E (2)</option><option value="4">D (4)</option>
+                                <option value="6">C (6)</option><option value="8">C+ (8)</option><option value="10">B (10)</option>
+                                <option value="12">B+ (12)</option><option value="14">A- (14)</option><option value="16">A (16)</option>
+                                <option value="18" selected>A+ (18)</option>
+                            </select>
+                        </div>
+                        <div class="input-group"><label>Gred Bahasa Inggeris</label>
+                            <select id="bi-grade" class="grade-select">
+                                <option value="0">G (0)</option><option value="2">E (2)</option><option value="4">D (4)</option>
+                                <option value="6">C (6)</option><option value="8">C+ (8)</option><option value="10">B (10)</option>
+                                <option value="12">B+ (12)</option><option value="14">A- (14)</option><option value="16">A (16)</option>
+                                <option value="18" selected>A+ (18)</option>
+                            </select>
+                        </div>
+                        <div class="input-group"><label>Gred Matematik</label>
+                            <select id="math-grade" class="grade-select">
+                                <option value="0">G (0)</option><option value="2">E (2)</option><option value="4">D (4)</option>
+                                <option value="6">C (6)</option><option value="8">C+ (8)</option><option value="10">B (10)</option>
+                                <option value="12">B+ (12)</option><option value="14">A- (14)</option><option value="16">A (16)</option>
+                                <option value="18" selected>A+ (18)</option>
+                            </select>
+                        </div>
+                        <div class="input-group"><label>Gred Sejarah</label>
+                            <select id="sejarah-grade" class="grade-select">
+                                <option value="0">G (0)</option><option value="2">E (2)</option><option value="4">D (4)</option>
+                                <option value="6">C (6)</option><option value="8">C+ (8)</option><option value="10">B (10)</option>
+                                <option value="12">B+ (12)</option><option value="14">A- (14)</option><option value="16">A (16)</option>
+                                <option value="18" selected>A+ (18)</option>
+                            </select>
+                        </div>
+                        <div class="calc-result">Markah Universal: <span id="universal-total">72</span> | Merit (40%): <span id="universal-merit">40.00</span>%</div>
+                    </div>
+                    
+                    <div class="calc-section">
+                        <h3><i class="fas fa-book"></i> Mata Pelajaran Pakej (30%)</h3>
+                        <div class="input-group"><label>Gred MP Pakej 1</label>
+                            <select id="pakej1-grade" class="grade-select">
+                                <option value="0">G (0)</option><option value="2">E (2)</option><option value="4">D (4)</option>
+                                <option value="6">C (6)</option><option value="8">C+ (8)</option><option value="10">B (10)</option>
+                                <option value="12">B+ (12)</option><option value="14">A- (14)</option><option value="16">A (16)</option>
+                                <option value="18" selected>A+ (18)</option>
+                            </select>
+                        </div>
+                        <div class="input-group"><label>Gred MP Pakej 2</label>
+                            <select id="pakej2-grade" class="grade-select">
+                                <option value="0">G (0)</option><option value="2">E (2)</option><option value="4">D (4)</option>
+                                <option value="6">C (6)</option><option value="8">C+ (8)</option><option value="10">B (10)</option>
+                                <option value="12">B+ (12)</option><option value="14">A- (14)</option><option value="16">A (16)</option>
+                                <option value="18" selected>A+ (18)</option>
+                            </select>
+                        </div>
+                        <div class="calc-result">Markah Pakej: <span id="pakej-markah">36</span> | Merit (30%): <span id="pakej-merit">30.00</span>%</div>
+                    </div>
+                    
+                    <div class="calc-section">
+                        <h3><i class="fas fa-star"></i> Mata Pelajaran Terbaik (20%)</h3>
+                        <div class="input-group"><label>Gred MP Terbaik 1</label>
+                            <select id="best1-grade" class="grade-select">
+                                <option value="0">G (0)</option><option value="2">E (2)</option><option value="4">D (4)</option>
+                                <option value="6">C (6)</option><option value="8">C+ (8)</option><option value="10">B (10)</option>
+                                <option value="12">B+ (12)</option><option value="14">A- (14)</option><option value="16">A (16)</option>
+                                <option value="18" selected>A+ (18)</option>
+                            </select>
+                        </div>
+                        <div class="input-group"><label>Gred MP Terbaik 2</label>
+                            <select id="best2-grade" class="grade-select">
+                                <option value="0">G (0)</option><option value="2">E (2)</option><option value="4">D (4)</option>
+                                <option value="6">C (6)</option><option value="8">C+ (8)</option><option value="10">B (10)</option>
+                                <option value="12">B+ (12)</option><option value="14">A- (14)</option><option value="16">A (16)</option>
+                                <option value="18" selected>A+ (18)</option>
+                            </select>
+                        </div>
+                        <div class="calc-result">Markah Terbaik: <span id="best-markah">36</span> | Merit (20%): <span id="best-merit">20.00</span>%</div>
+                    </div>
+                </div>
+                
+                <div class="package-type-selector">
+                    <label><i class="fas fa-cogs"></i> Pilihan Pakej STEM</label>
+                    <div class="package-options">
+                        <label class="package-option selected"><input type="radio" name="package-type" value="stem-ab" checked><span>STEM A&B (2 subjek)</span></label>
+                        <label class="package-option"><input type="radio" name="package-type" value="stem-c"><span>STEM C (1 subjek terbaik dari 2)</span></label>
+                    </div>
+                    <div class="input-hint"><strong>STEM A&B:</strong> Ambil 2 subjek (maks 36 markah)<br><strong>STEM C:</strong> Ambil 1 subjek terbaik dari 2 (maks 18 markah)</div>
+                </div>
+                
+                <div id="formula-breakdown"></div>
+                
+                <div class="total-result-container">
+                    <h3><i class="fas fa-chart-line"></i> Keputusan Merit Akademik (90%)</h3>
+                    <div class="result-breakdown">
+                        <div class="breakdown-item"><span>Merit MP Universal (40%):</span><span id="final-universal">40.00</span>%</div>
+                        <div class="breakdown-item"><span>Merit MP Pakej (30%):</span><span id="final-pakej">30.00</span>%</div>
+                        <div class="breakdown-item"><span>Merit MP Terbaik (20%):</span><span id="final-best">20.00</span>%</div>
+                        <div class="breakdown-total"><span>Jumlah Merit Akademik:</span><span id="total-merit">90.00</span>%</div>
+                    </div>
+                    <div class="total-percentage-note">(40% + 30% + 20% = 90% maksimum untuk bahagian akademik)</div>
+                </div>
+                
+                <div class="info-box">
+                    <h4><i class="fas fa-info-circle"></i> Cara Pengiraan Lengkap</h4>
+                    <p><strong>Langkah 1:</strong> Dapatkan markah akademik (maks 90%) dari halaman ini</p>
+                    <p><strong>Langkah 2:</strong> Pergi ke halaman 2 untuk tambah markah kokurikulum (0-10%)</p>
+                    <p><strong>Langkah 3:</strong> Jumlah Merit Akhir = Akademik (90%) + Kokurikulum (10%) = 100%</p>
+                    <button class="nav-btn" onclick="goToPage(2)"><i class="fas fa-calculator"></i> Seterusnya: Tambah Markah Kokurikulum</button>
+                </div>
+            </div>
+            
+            <div class="page-nav">
+                <button class="nav-btn secondary" id="prev-btn1" disabled><i class="fas fa-arrow-left"></i> Sebelum</button>
+                <button class="nav-btn" id="next-btn1">Seterusnya <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+        
+        <!-- Page 2-5 similar structure with complete select options -->
+        <div class="page" id="page2">
+            <div class="page-header"><h1>Mer-C (Pembilang Merit)</h1><p class="description">Tambahkan markah kokurikulum (0-10%) kepada markah akademik anda</p></div>
+            <div class="calculator-container">
+                <div class="input-group"><div class="input-label"><span>Markah Akademik (90%)</span><span class="weight-badge">Dari Halaman 1</span></div>
+                <input type="number" id="primary-input" placeholder="Masukkan markah akademik (0-90)" min="0" max="90" step="0.01" value="90.00">
+                <div class="error-message" id="primary-error">Sila masukkan nombor yang sah antara 0 dan 90</div></div>
+                <div class="input-group"><div class="input-label"><span>Markah Kokurikulum (10%)</span><span class="weight-badge">Diberi oleh guru</span></div>
+                <input type="number" id="secondary-input" placeholder="Masukkan markah kokurikulum (0-10)" min="0" max="10" step="0.01" value="10.00">
+                <div class="error-message" id="secondary-error">Sila masukkan nombor yang sah antara 0 dan 10</div></div>
+                <button id="calculate-btn" class="calculate-btn"><i class="fas fa-calculator"></i> Kira Jumlah Merit Akhir</button>
+                <div class="result-container"><div class="result-label">Jumlah Merit Akhir Anda</div><div class="result-value"><span id="result">100.00</span><span class="result-percent">%</span></div></div>
+                <div class="formula"><p><strong>Formula:</strong> (Akademik 90%) + (Kokurikulum 10%) = Jumlah Merit Akhir 100%</p></div>
+            </div>
+            <div class="page-nav"><button class="nav-btn secondary" id="prev-btn2"><i class="fas fa-arrow-left"></i> Sebelum</button><button class="nav-btn" id="next-btn2">Seterusnya <i class="fas fa-arrow-right"></i></button></div>
+        </div>
+        
+        <div class="page" id="page3">
+            <div class="page-header"><h1>Perihal Kalkulator Ini</h1><p class="description">Pelajari bagaimana peratusan merit dikira</p></div>
+            <div class="about-content"><p>Kalkulator Peratusan Merit mengikuti sistem rasmi SPM yang digunakan oleh institusi Malaysia, menilai akademik (90%) dan kokurikulum (10%).</p>
+            <div class="feature-list"><div class="feature-item"><div class="feature-icon"><i class="fas fa-balance-scale"></i></div><div class="feature-title">Pengiraan Berwajaran</div><p>Ketepatan wajaran 90/10</p></div>
+            <div class="feature-item"><div class="feature-icon"><i class="fas fa-chart-line"></i></div><div class="feature-title">Keputusan Masa Nyata</div><p>Maklum balas visual segera</p></div>
+            <div class="feature-item"><div class="feature-icon"><i class="fas fa-robot"></i></div><div class="feature-title">Penasihat AI</div><p>Cadangan universiti & kerjaya pintar</p></div></div></div>
+            <div class="page-nav"><button class="nav-btn secondary" id="prev-btn3"><i class="fas fa-arrow-left"></i> Sebelum</button><button class="nav-btn" id="next-btn3">Seterusnya <i class="fas fa-arrow-right"></i></button></div>
+        </div>
+        
+        <div class="page" id="page4">
+            <div class="page-header"><h1>Penasihat Kerjaya & Universiti AI</h1><p class="description">Dapatkan cadangan peribadi berdasarkan keputusan SPM anda</p></div>
+            <div class="ai-advisor-container"><div class="calc-section"><h3><i class="fas fa-graduation-cap"></i> Profil Anda</h3>
+            <div class="input-group"><label>Bidang Minat</label><select id="field-interest" class="grade-select"><option value="">Pilih</option><option value="science">Sains</option><option value="engineering">Kejuruteraan</option><option value="it">Teknologi Maklumat</option><option value="commerce">Perniagaan</option><option value="health">Kesihatan</option><option value="arts">Seni</option></select></div>
+            <div class="input-group"><label>Markah Merit Anda</label><input type="number" id="total-merit-input" placeholder="Masukkan markah merit" min="0" max="100"></div>
+            <button id="analyze-btn" class="calculate-btn"><i class="fas fa-robot"></i> Analisis & Dapatkan Cadangan</button></div>
+            <div id="ai-results" style="display: none;"><div class="total-result-container"><h3>Cadangan Peribadi</h3><div class="result-breakdown"><div class="breakdown-item"><span>Profil Anda:</span><span id="profile-type">-</span></div><div class="breakdown-item"><span>Markah Merit:</span><span id="display-merit">-</span></div><div class="breakdown-item"><span>Padanan Kerjaya:</span><span id="career-match">-</span></div></div></div>
+            <div class="calc-section"><h3>Universiti Disyorkan</h3><div id="university-list"></div></div>
+            <div class="calc-section"><h3>Laluan Kerjaya</h3><div id="career-list"></div></div>
+            <div class="calc-section"><h3>Kursus Disyorkan</h3><div id="course-list"></div></div></div></div>
+            <div class="page-nav"><button class="nav-btn secondary" id="prev-btn4"><i class="fas fa-arrow-left"></i> Sebelum</button><button class="nav-btn" id="next-btn4">Seterusnya <i class="fas fa-arrow-right"></i></button></div>
+        </div>
+        
+        <div class="page" id="page5">
+            <div class="page-header"><h1>Hubungi & Pasukan</h1><p class="description">Kongsi maklum balas anda</p></div>
+            <div class="contact-content"><div class="contact-form"><div class="form-group"><label><i class="fas fa-user"></i> Nama Anda</label><input type="text" id="name" placeholder="Masukkan nama anda"></div>
+            <div class="form-group"><label><i class="fas fa-envelope"></i> Emel</label><input type="email" id="email" placeholder="Masukkan emel anda"></div>
+            <div class="form-group"><label><i class="fas fa-comment"></i> Mesej</label><textarea id="message" placeholder="Mesej anda..."></textarea></div>
+            <button id="send-btn" class="calculate-btn"><i class="fas fa-paper-plane"></i> Hantar Mesej</button></div>
+            <div class="team-section"><h3>Pasukan Kami</h3><p>Dibangunkan oleh MarS — berdedikasi untuk alat pendidikan.</p><div class="heart-icon"><i class="fas fa-heart"></i></div></div></div>
+            <div class="page-nav"><button class="nav-btn secondary" id="prev-btn5"><i class="fas fa-arrow-left"></i> Sebelum</button><button class="nav-btn" id="next-btn5">Seterusnya <i class="fas fa-arrow-right"></i></button></div>
+        </div>
+    </div>
+    
+    <div class="page-indicator"><div class="page-dot active" data-page="1"></div><div class="page-dot" data-page="2"></div><div class="page-dot" data-page="3"></div><div class="page-dot" data-page="4"></div><div class="page-dot" data-page="5"></div></div>
+    
+    <footer><p>&copy; 2025 @Mer-C. Hak cipta terpelihara oleh MarS.</p></footer>
+    
+    <script src="calc.js"></script>
+</body>
+</html>

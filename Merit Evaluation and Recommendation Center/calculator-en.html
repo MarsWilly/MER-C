@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MER-C | SPM Merit Calculator (English)</title>
+    <link rel="stylesheet" href="calc.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Language Indicator -->
+    <div class="lang-indicator">
+        <span>🇬🇧 English</span>
+        <a href="index.html" class="change-lang"><i class="fas fa-globe"></i> Change Language</a>
+    </div>
+
+    <div class="pages-container">
+        <!-- Page 1: SPM Merit Calculator -->
+        <div class="page active" id="page1">
+            <div class="page-header">
+                <h1>SPM Merit Calculation 2.0</h1>
+                <p class="description">Merit calculation system for admission to higher education institutions</p>
+            </div>
+            
+            <div class="greeting-content">
+                <div class="multi-calculator">
+                    <!-- Universal Subjects (40%) -->
+                    <div class="calc-section">
+                        <h3><i class="fas fa-globe"></i> Universal Subjects (40%)</h3>
+                        <div class="input-group">
+                            <label>Malay Language Grade</label>
+                            <select id="bm-grade" class="grade-select">
+                                <option value="0">G (0)</option>
+                                <option value="2">E (2)</option>
+                                <option value="4">D (4)</option>
+                                <option value="6">C (6)</option>
+                                <option value="8">C+ (8)</option>
+                                <option value="10">B (10)</option>
+                                <option value="12">B+ (12)</option>
+                                <option value="14">A- (14)</option>
+                                <option value="16">A (16)</option>
+                                <option value="18" selected>A+ (18)</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>English Language Grade</label>
+                            <select id="bi-grade" class="grade-select">
+                                <option value="0">G (0)</option>
+                                <option value="2">E (2)</option>
+                                <option value="4">D (4)</option>
+                                <option value="6">C (6)</option>
+                                <option value="8">C+ (8)</option>
+                                <option value="10">B (10)</option>
+                                <option value="12">B+ (12)</option>
+                                <option value="14">A- (14)</option>
+                                <option value="16">A (16)</option>
+                                <option value="18" selected>A+ (18)</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Mathematics Grade</label>
+                            <select id="math-grade" class="grade-select">
+                                <option value="0">G (0)</option>
+                                <option value="2">E (2)</option>
+                                <option value="4">D (4)</option>
+                                <option value="6">C (6)</option>
+                                <option value="8">C+ (8)</option>
+                                <option value="10">B (10)</option>
+                                <option value="12">B+ (12)</option>
+                                <option value="14">A- (14)</option>
+                                <option value="16">A (16)</option>
+                                <option value="18" selected>A+ (18)</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>History Grade</label>
+                            <select id="sejarah-grade" class="grade-select">
+                                <option value="0">G (0)</option>
+                                <option value="2">E (2)</option>
+                                <option value="4">D (4)</option>
+                                <option value="6">C (6)</option>
+                                <option value="8">C+ (8)</option>
+                                <option value="10">B (10)</option>
+                                <option value="12">B+ (12)</option>
+                                <option value="14">A- (14)</option>
+                                <option value="16">A (16)</option>
+                                <option value="18" selected>A+ (18)</option>
+                            </select>
+                        </div>
+                        <div class="calc-result">
+                            Universal Marks: <span id="universal-total">72</span> | Merit (40%): <span id="universal-merit">40.00</span>%
+                        </div>
+                    </div>
+                    
+                    <!-- Package Subjects (30%) -->
+                    <div class="calc-section">
+                        <h3><i class="fas fa-book"></i> Package Subjects (30%)</h3>
+                        <div class="input-group">
+                            <label>Package Subject 1 Grade</label>
+                            <select id="pakej1-grade" class="grade-select">
+                                <option value="0">G (0)</option>
+                                <option value="2">E (2)</option>
+                                <option value="4">D (4)</option>
+                                <option value="6">C (6)</option>
+                                <option value="8">C+ (8)</option>
+                                <option value="10">B (10)</option>
+                                <option value="12">B+ (12)</option>
+                                <option value="14">A- (14)</option>
+                                <option value="16">A (16)</option>
+                                <option value="18" selected>A+ (18)</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Package Subject 2 Grade</label>
+                            <select id="pakej2-grade" class="grade-select">
+                                <option value="0">G (0)</option>
+                                <option value="2">E (2)</option>
+                                <option value="4">D (4)</option>
+                                <option value="6">C (6)</option>
+                                <option value="8">C+ (8)</option>
+                                <option value="10">B (10)</option>
+                                <option value="12">B+ (12)</option>
+                                <option value="14">A- (14)</option>
+                                <option value="16">A (16)</option>
+                                <option value="18" selected>A+ (18)</option>
+                            </select>
+                        </div>
+                        <div class="calc-result">
+                            Package Marks: <span id="pakej-markah">36</span> | Merit (30%): <span id="pakej-merit">30.00</span>%
+                        </div>
+                    </div>
+                    
+                    <!-- Best Subjects (20%) -->
+                    <div class="calc-section">
+                        <h3><i class="fas fa-star"></i> Best Subjects (20%)</h3>
+                        <div class="input-group">
+                            <label>Best Subject 1 Grade</label>
+                            <select id="best1-grade" class="grade-select">
+                                <option value="0">G (0)</option>
+                                <option value="2">E (2)</option>
+                                <option value="4">D (4)</option>
+                                <option value="6">C (6)</option>
+                                <option value="8">C+ (8)</option>
+                                <option value="10">B (10)</option>
+                                <option value="12">B+ (12)</option>
+                                <option value="14">A- (14)</option>
+                                <option value="16">A (16)</option>
+                                <option value="18" selected>A+ (18)</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Best Subject 2 Grade</label>
+                            <select id="best2-grade" class="grade-select">
+                                <option value="0">G (0)</option>
+                                <option value="2">E (2)</option>
+                                <option value="4">D (4)</option>
+                                <option value="6">C (6)</option>
+                                <option value="8">C+ (8)</option>
+                                <option value="10">B (10)</option>
+                                <option value="12">B+ (12)</option>
+                                <option value="14">A- (14)</option>
+                                <option value="16">A (16)</option>
+                                <option value="18" selected>A+ (18)</option>
+                            </select>
+                        </div>
+                        <div class="calc-result">
+                            Best Marks: <span id="best-markah">36</span> | Merit (20%): <span id="best-merit">20.00</span>%
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Package Type Selector -->
+                <div class="package-type-selector">
+                    <label><i class="fas fa-cogs"></i> STEM Package Options</label>
+                    <div class="package-options">
+                        <label class="package-option selected">
+                            <input type="radio" name="package-type" value="stem-ab" checked>
+                            <span>STEM A&B (2 subjects)</span>
+                        </label>
+                        <label class="package-option">
+                            <input type="radio" name="package-type" value="stem-c">
+                            <span>STEM C (1 best subject from 2)</span>
+                        </label>
+                    </div>
+                    <div class="input-hint">
+                        <strong>STEM A&B:</strong> Take 2 subjects (max 36 marks)<br>
+                        <strong>STEM C:</strong> Take 1 best subject from 2 (max 18 marks)
+                    </div>
+                </div>
+                
+                <div id="formula-breakdown"></div>
+                
+                <!-- Total Result Section -->
+                <div class="total-result-container">
+                    <h3><i class="fas fa-chart-line"></i> Academic Merit Result (90%)</h3>
+                    <div class="result-breakdown">
+                        <div class="breakdown-item">
+                            <span>Universal Subject Merit (40%):</span>
+                            <span id="final-universal">40.00</span>%
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Package Subject Merit (30%):</span>
+                            <span id="final-pakej">30.00</span>%
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Best Subject Merit (20%):</span>
+                            <span id="final-best">20.00</span>%
+                        </div>
+                        <div class="breakdown-total">
+                            <span>Total Academic Merit:</span>
+                            <span id="total-merit">90.00</span>%
+                        </div>
+                    </div>
+                    <div class="total-percentage-note">
+                        (40% + 30% + 20% = 90% maximum for academic portion)
+                    </div>
+                </div>
+                
+                <div class="info-box">
+                    <h4><i class="fas fa-info-circle"></i> Complete Calculation Method</h4>
+                    <p><strong>Step 1:</strong> Get academic score (max 90%) from this page</p>
+                    <p><strong>Step 2:</strong> Go to page 2 to add co-curricular marks (0-10%)</p>
+                    <p><strong>Step 3:</strong> Final Total Merit = Academic (90%) + Co-curricular (10%) = 100%</p>
+                    <button class="nav-btn" onclick="goToPage(2)"><i class="fas fa-calculator"></i> Next: Add Co-curricular Marks</button>
+                </div>
+            </div>
+            
+            <div class="page-nav">
+                <button class="nav-btn secondary" id="prev-btn1" disabled><i class="fas fa-arrow-left"></i> Previous</button>
+                <button class="nav-btn" id="next-btn1">Next <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+        
+        <!-- Page 2: Co-curricular Calculator -->
+        <div class="page" id="page2">
+            <div class="page-header">
+                <h1>Mer-C (Merit Counter)</h1>
+                <p class="description">Add co-curricular marks (0-10%) to your academic score</p>
+            </div>
+            <div class="calculator-container">
+                <div class="input-group">
+                    <div class="input-label"><span>Academic Score (90%)</span><span class="weight-badge">From Page 1</span></div>
+                    <input type="number" id="primary-input" placeholder="Enter academic score (0-90)" min="0" max="90" step="0.01" value="90.00">
+                    <div class="input-hint">Copy academic score from Page 1 (0-90)</div>
+                    <div class="error-message" id="primary-error">Please enter a valid number between 0 and 90</div>
+                </div>
+                <div class="input-group">
+                    <div class="input-label"><span>Co-curricular Marks (10%)</span><span class="weight-badge">Given by teacher</span></div>
+                    <input type="number" id="secondary-input" placeholder="Enter co-curricular marks (0-10)" min="0" max="10" step="0.01" value="10.00">
+                    <div class="input-hint">Enter co-curricular marks given by teacher (0-10)</div>
+                    <div class="error-message" id="secondary-error">Please enter a valid number between 0 and 10</div>
+                </div>
+                <button id="calculate-btn" class="calculate-btn"><i class="fas fa-calculator"></i> Calculate Final Total Merit</button>
+                <div class="result-container"><div class="result-label">Your Final Total Merit</div><div class="result-value"><span id="result">100.00</span><span class="result-percent">%</span></div></div>
+                <div class="formula"><p><strong>Formula:</strong> (Academic 90%) + (Co-curricular 10%) = Total Final Merit 100%</p></div>
+            </div>
+            <div class="page-nav"><button class="nav-btn secondary" id="prev-btn2"><i class="fas fa-arrow-left"></i> Previous</button><button class="nav-btn" id="next-btn2">Next <i class="fas fa-arrow-right"></i></button></div>
+        </div>
+        
+        <!-- Page 3: About -->
+        <div class="page" id="page3">
+            <div class="page-header"><h1>About This Calculator</h1><p class="description">Learn how the merit percentage is calculated</p></div>
+            <div class="about-content">
+                <p>The Merit Percentage Calculator follows the official SPM system used by Malaysian institutions, evaluating academic (90%) and co-curricular (10%).</p>
+                <div class="feature-list">
+                    <div class="feature-item"><div class="feature-icon"><i class="fas fa-balance-scale"></i></div><div class="feature-title">Weighted Calculation</div><p>Accurate 90/10 weighting</p></div>
+                    <div class="feature-item"><div class="feature-icon"><i class="fas fa-chart-line"></i></div><div class="feature-title">Real-time Results</div><p>Instant visual feedback</p></div>
+                    <div class="feature-item"><div class="feature-icon"><i class="fas fa-robot"></i></div><div class="feature-title">AI Advisor</div><p>Smart university & career suggestions</p></div>
+                </div>
+            </div>
+            <div class="page-nav"><button class="nav-btn secondary" id="prev-btn3"><i class="fas fa-arrow-left"></i> Previous</button><button class="nav-btn" id="next-btn3">Next <i class="fas fa-arrow-right"></i></button></div>
+        </div>
+        
+        <!-- Page 4: AI Career Advisor -->
+        <div class="page" id="page4">
+            <div class="page-header"><h1>AI Career & University Advisor</h1><p class="description">Get personalized recommendations based on your SPM results</p></div>
+            <div class="ai-advisor-container">
+                <div class="calc-section">
+                    <h3><i class="fas fa-graduation-cap"></i> Your Profile</h3>
+                    <div class="input-group"><label>Field of Interest</label>
+                        <select id="field-interest" class="grade-select">
+                            <option value="">Select your interest</option>
+                            <option value="science">Science & Mathematics</option>
+                            <option value="arts">Arts & Humanities</option>
+                            <option value="commerce">Commerce & Business</option>
+                            <option value="engineering">Engineering</option>
+                            <option value="it">Information Technology</option>
+                            <option value="health">Health Sciences</option>
+                        </select>
+                    </div>
+                    <div class="input-group"><label>Your Merit Score</label><input type="number" id="total-merit-input" placeholder="Enter merit score" min="0" max="100"></div>
+                    <div class="input-group"><label>Preferred Location</label>
+                        <select id="preferred-location" class="grade-select">
+                            <option value="">Any location</option>
+                            <option value="kl">Kuala Lumpur</option>
+                            <option value="selangor">Selangor</option>
+                            <option value="penang">Penang</option>
+                            <option value="johor">Johor</option>
+                        </select>
+                    </div>
+                    <button id="analyze-btn" class="calculate-btn"><i class="fas fa-robot"></i> Analyze & Get Recommendations</button>
+                </div>
+                <div id="ai-results" style="display: none;">
+                    <div class="total-result-container"><h3>Personalized Recommendations</h3><div class="result-breakdown"><div class="breakdown-item"><span>Your Profile:</span><span id="profile-type">-</span></div><div class="breakdown-item"><span>Merit Score:</span><span id="display-merit">-</span></div><div class="breakdown-item"><span>Career Match:</span><span id="career-match">-</span></div></div></div>
+                    <div class="calc-section"><h3>Recommended Universities</h3><div id="university-list"></div></div>
+                    <div class="calc-section"><h3>Suggested Careers</h3><div id="career-list"></div></div>
+                    <div class="calc-section"><h3>Recommended Courses</h3><div id="course-list"></div></div>
+                </div>
+            </div>
+            <div class="page-nav"><button class="nav-btn secondary" id="prev-btn4"><i class="fas fa-arrow-left"></i> Previous</button><button class="nav-btn" id="next-btn4">Next <i class="fas fa-arrow-right"></i></button></div>
+        </div>
+        
+        <!-- Page 5: Contact -->
+        <div class="page" id="page5">
+            <div class="page-header"><h1>Contact & Team</h1><p class="description">Share your feedback</p></div>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <div class="form-group"><label><i class="fas fa-user"></i> Your Name</label><input type="text" id="name" placeholder="Enter your name"></div>
+                    <div class="form-group"><label><i class="fas fa-envelope"></i> Email</label><input type="email" id="email" placeholder="Enter your email"></div>
+                    <div class="form-group"><label><i class="fas fa-comment"></i> Message</label><textarea id="message" placeholder="Your message..."></textarea></div>
+                    <button id="send-btn" class="calculate-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+                </div>
+                <div class="team-section"><h3>About Our Team</h3><p>Developed by MarS — dedicated to education tools.</p><div class="heart-icon"><i class="fas fa-heart"></i></div></div>
+            </div>
+            <div class="page-nav"><button class="nav-btn secondary" id="prev-btn5"><i class="fas fa-arrow-left"></i> Previous</button><button class="nav-btn" id="next-btn5">Next <i class="fas fa-arrow-right"></i></button></div>
+        </div>
+    </div>
+    
+    <div class="page-indicator"><div class="page-dot active" data-page="1"></div><div class="page-dot" data-page="2"></div><div class="page-dot" data-page="3"></div><div class="page-dot" data-page="4"></div><div class="page-dot" data-page="5"></div></div>
+    
+    <footer><p>&copy; 2025 @Mer-C. All rights reserved by MarS.</p></footer>
+    
+    <script src="calc.js"></script>
+</body>
+</html>

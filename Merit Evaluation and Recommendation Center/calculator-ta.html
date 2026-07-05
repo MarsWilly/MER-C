@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MER-C | SPM மெரிட் கால்குலேட்டர் (தமிழ்)</title>
+    <link rel="stylesheet" href="calc.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="lang-indicator">
+        <span>🇱🇰 தமிழ்</span>
+        <a href="index.html" class="change-lang"><i class="fas fa-globe"></i> மொழியை மாற்று</a>
+    </div>
+
+    <div class="pages-container">
+        <!-- Page 1: SPM Merit Calculator -->
+        <div class="page active" id="page1">
+            <div class="page-header">
+                <h1>SPM மெரிட் கணக்கீடு 2.0</h1>
+                <p class="description">உயர் கல்வி நிறுவனங்களில் சேர்வதற்கான மெரிட் கணக்கீட்டு முறை</p>
+            </div>
+            
+            <div class="greeting-content">
+                <div class="multi-calculator">
+                    <!-- Universal Subjects (40%) -->
+                    <div class="calc-section">
+                        <h3><i class="fas fa-globe"></i> பொது பாடங்கள் (40%)</h3>
+                        <div class="input-group">
+                            <label>மலாய் மொழி தரம்</label>
+                            <select id="bm-grade" class="grade-select">
+                                <option value="0">G (0)</option>
+                                <option value="2">E (2)</option>
+                                <option value="4">D (4)</option>
+                                <option value="6">C (6)</option>
+                                <option value="8">C+ (8)</option>
+                                <option value="10">B (10)</option>
+                                <option value="12">B+ (12)</option>
+                                <option value="14">A- (14)</option>
+                                <option value="16">A (16)</option>
+                                <option value="18" selected>A+ (18)</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>ஆங்கில மொழி தரம்</label>
+                            <select id="bi-grade" class="grade-select">
+                                <option value="0">G (0)</option>
+                                <option value="2">E (2)</option>
+                                <option value="4">D (4)</option>
+                                <option value="6">C (6)</option>
+                                <option value="8">C+ (8)</option>
+                                <option value="10">B (10)</option>
+                                <option value="12">B+ (12)</option>
+                                <option value="14">A- (14)</option>
+                                <option value="16">A (16)</option>
+                                <option value="18" selected>A+ (18)</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>கணிதம் தரம்</label>
+                            <select id="math-grade" class="grade-select">
+                                <option value="0">G (0)</option>
+                                <option value="2">E (2)</option>
+                                <option value="4">D (4)</option>
+                                <option value="6">C (6)</option>
+                                <option value="8">C+ (8)</option>
+                                <option value="10">B (10)</option>
+                                <option value="12">B+ (12)</option>
+                                <option value="14">A- (14)</option>
+                                <option value="16">A (16)</option>
+                                <option value="18" selected>A+ (18)</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>வரலாறு தரம்</label>
+                            <select id="sejarah-grade" class="grade-select">
+                                <option value="0">G (0)</option>
+                                <option value="2">E (2)</option>
+                                <option value="4">D (4)</option>
+                                <option value="6">C (6)</option>
+                                <option value="8">C+ (8)</option>
+                                <option value="10">B (10)</option>
+                                <option value="12">B+ (12)</option>
+                                <option value="14">A- (14)</option>
+                                <option value="16">A (16)</option>
+                                <option value="18" selected>A+ (18)</option>
+                            </select>
+                        </div>
+                        <div class="calc-result">
+                            பொது மதிப்பெண்கள்: <span id="universal-total">72</span> | மெரிட் (40%): <span id="universal-merit">40.00</span>%
+                        </div>
+                    </div>
+                    
+                    <!-- Package Subjects (30%) -->
+                    <div class="calc-section">
+                        <h3><i class="fas fa-book"></i> தொகுப்பு பாடங்கள் (30%)</h3>
+                        <div class="input-group">
+                            <label>தொகுப்பு பாடம் 1 தரம்</label>
+                            <select id="pakej1-grade" class="grade-select">
+                                <option value="0">G (0)</option>
+                                <option value="2">E (2)</option>
+                                <option value="4">D (4)</option>
+                                <option value="6">C (6)</option>
+                                <option value="8">C+ (8)</option>
+                                <option value="10">B (10)</option>
+                                <option value="12">B+ (12)</option>
+                                <option value="14">A- (14)</option>
+                                <option value="16">A (16)</option>
+                                <option value="18" selected>A+ (18)</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>தொகுப்பு பாடம் 2 தரம்</label>
+                            <select id="pakej2-grade" class="grade-select">
+                                <option value="0">G (0)</option>
+                                <option value="2">E (2)</option>
+                                <option value="4">D (4)</option>
+                                <option value="6">C (6)</option>
+                                <option value="8">C+ (8)</option>
+                                <option value="10">B (10)</option>
+                                <option value="12">B+ (12)</option>
+                                <option value="14">A- (14)</option>
+                                <option value="16">A (16)</option>
+                                <option value="18" selected>A+ (18)</option>
+                            </select>
+                        </div>
+                        <div class="calc-result">
+                            தொகுப்பு மதிப்பெண்கள்: <span id="pakej-markah">36</span> | மெரிட் (30%): <span id="pakej-merit">30.00</span>%
+                        </div>
+                    </div>
+                    
+                    <!-- Best Subjects (20%) -->
+                    <div class="calc-section">
+                        <h3><i class="fas fa-star"></i> சிறந்த பாடங்கள் (20%)</h3>
+                        <div class="input-group">
+                            <label>சிறந்த பாடம் 1 தரம்</label>
+                            <select id="best1-grade" class="grade-select">
+                                <option value="0">G (0)</option>
+                                <option value="2">E (2)</option>
+                                <option value="4">D (4)</option>
+                                <option value="6">C (6)</option>
+                                <option value="8">C+ (8)</option>
+                                <option value="10">B (10)</option>
+                                <option value="12">B+ (12)</option>
+                                <option value="14">A- (14)</option>
+                                <option value="16">A (16)</option>
+                                <option value="18" selected>A+ (18)</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>சிறந்த பாடம் 2 தரம்</label>
+                            <select id="best2-grade" class="grade-select">
+                                <option value="0">G (0)</option>
+                                <option value="2">E (2)</option>
+                                <option value="4">D (4)</option>
+                                <option value="6">C (6)</option>
+                                <option value="8">C+ (8)</option>
+                                <option value="10">B (10)</option>
+                                <option value="12">B+ (12)</option>
+                                <option value="14">A- (14)</option>
+                                <option value="16">A (16)</option>
+                                <option value="18" selected>A+ (18)</option>
+                            </select>
+                        </div>
+                        <div class="calc-result">
+                            சிறந்த மதிப்பெண்கள்: <span id="best-markah">36</span> | மெரிட் (20%): <span id="best-merit">20.00</span>%
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Package Type Selector -->
+                <div class="package-type-selector">
+                    <label><i class="fas fa-cogs"></i> STEM தொகுப்பு விருப்பங்கள்</label>
+                    <div class="package-options">
+                        <label class="package-option selected">
+                            <input type="radio" name="package-type" value="stem-ab" checked>
+                            <span>STEM A&B (2 பாடங்கள்)</span>
+                        </label>
+                        <label class="package-option">
+                            <input type="radio" name="package-type" value="stem-c">
+                            <span>STEM C (2ல் 1 சிறந்த பாடம்)</span>
+                        </label>
+                    </div>
+                    <div class="input-hint">
+                        <strong>STEM A&B:</strong> 2 பாடங்களை எடுக்கவும் (அதிகபட்சம் 36 மதிப்பெண்கள்)<br>
+                        <strong>STEM C:</strong> 2 பாடங்களில் 1 சிறந்த பாடத்தை எடுக்கவும் (அதிகபட்சம் 18 மதிப்பெண்கள்)
+                    </div>
+                </div>
+                
+                <div id="formula-breakdown"></div>
+                
+                <!-- Total Result Section -->
+                <div class="total-result-container">
+                    <h3><i class="fas fa-chart-line"></i> கல்வி மெரிட் முடிவு (90%)</h3>
+                    <div class="result-breakdown">
+                        <div class="breakdown-item"><span>பொது பாட மெரிட் (40%):</span><span id="final-universal">40.00</span>%</div>
+                        <div class="breakdown-item"><span>தொகுப்பு பாட மெரிட் (30%):</span><span id="final-pakej">30.00</span>%</div>
+                        <div class="breakdown-item"><span>சிறந்த பாட மெரிட் (20%):</span><span id="final-best">20.00</span>%</div>
+                        <div class="breakdown-total"><span>மொத்த கல்வி மெரிட்:</span><span id="total-merit">90.00</span>%</div>
+                    </div>
+                    <div class="total-percentage-note">(40% + 30% + 20% = கல்விப் பகுதிக்கு அதிகபட்சம் 90%)</div>
+                </div>
+                
+                <div class="info-box">
+                    <h4><i class="fas fa-info-circle"></i> முழுமையான கணக்கீட்டு முறை</h4>
+                    <p><strong>படி 1:</strong> இந்தப் பக்கத்திலிருந்து கல்வி மதிப்பெண்ணைப் பெறவும் (அதிகபட்சம் 90%)</p>
+                    <p><strong>படி 2:</strong> பாடநெறி சாரா மதிப்பெண்களைச் சேர்க்க பக்கம் 2 க்குச் செல்லவும் (0-10%)</p>
+                    <p><strong>படி 3:</strong> இறுதி மொத்த மெரிட் = கல்வி (90%) + பாடநெறி சாரா (10%) = 100%</p>
+                    <button class="nav-btn" onclick="goToPage(2)"><i class="fas fa-calculator"></i> அடுத்து: பாடநெறி சாரா மதிப்பெண்களைச் சேர்க்க</button>
+                </div>
+            </div>
+            
+            <div class="page-nav">
+                <button class="nav-btn secondary" id="prev-btn1" disabled><i class="fas fa-arrow-left"></i> முந்தைய</button>
+                <button class="nav-btn" id="next-btn1">அடுத்து <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+        
+        <!-- Page 2: Co-curricular Calculator -->
+        <div class="page" id="page2">
+            <div class="page-header">
+                <h1>மெரிட் கவுண்டர்</h1>
+                <p class="description">உங்கள் கல்வி மதிப்பெண்ணுடன் பாடநெறி சாரா மதிப்பெண்களைச் சேர்க்கவும் (0-10%)</p>
+            </div>
+            <div class="calculator-container">
+                <div class="input-group">
+                    <div class="input-label"><span>கல்வி மதிப்பெண் (90%)</span><span class="weight-badge">பக்கம் 1 இலிருந்து</span></div>
+                    <input type="number" id="primary-input" placeholder="கல்வி மதிப்பெண்ணை உள்ளிடுக (0-90)" min="0" max="90" step="0.01" value="90.00">
+                    <div class="input-hint">பக்கம் 1 இலிருந்து கல்வி மதிப்பெண்ணை நகலெடுக்கவும் (0-90)</div>
+                    <div class="error-message" id="primary-error">0 மற்றும் 90 க்கு இடையில் சரியான எண்ணை உள்ளிடவும்</div>
+                </div>
+                <div class="input-group">
+                    <div class="input-label"><span>பாடநெறி சாரா மதிப்பெண்கள் (10%)</span><span class="weight-badge">ஆசிரியரால் வழங்கப்பட்டது</span></div>
+                    <input type="number" id="secondary-input" placeholder="பாடநெறி சாரா மதிப்பெண்களை உள்ளிடுக (0-10)" min="0" max="10" step="0.01" value="10.00">
+                    <div class="input-hint">ஆசிரியரால் வழங்கப்பட்ட பாடநெறி சாரா மதிப்பெண்களை உள்ளிடுக (0-10)</div>
+                    <div class="error-message" id="secondary-error">0 மற்றும் 10 க்கு இடையில் சரியான எண்ணை உள்ளிடவும்</div>
+                </div>
+                <button id="calculate-btn" class="calculate-btn"><i class="fas fa-calculator"></i> இறுதி மொத்த மெரிட்டைக் கணக்கிடுக</button>
+                <div class="result-container"><div class="result-label">உங்கள் இறுதி மொத்த மெரிட்</div><div class="result-value"><span id="result">100.00</span><span class="result-percent">%</span></div></div>
+                <div class="formula"><p><strong>சூத்திரம்:</strong> (கல்வி 90%) + (பாடநெறி சாரா 10%) = இறுதி மொத்த மெரிட் 100%</p></div>
+            </div>
+            <div class="page-nav"><button class="nav-btn secondary" id="prev-btn2"><i class="fas fa-arrow-left"></i> முந்தைய</button><button class="nav-btn" id="next-btn2">அடுத்து <i class="fas fa-arrow-right"></i></button></div>
+        </div>
+        
+        <!-- Page 3: About -->
+        <div class="page" id="page3">
+            <div class="page-header"><h1>இந்த கால்குலேட்டர் பற்றி</h1><p class="description">மெரிட் சதவீதம் எவ்வாறு கணக்கிடப்படுகிறது என்பதை அறிக</p></div>
+            <div class="about-content">
+                <p>மெரிட் சதவீத கால்குலேட்டர் மலேசிய நிறுவனங்களால் பயன்படுத்தப்படும் அதிகாரப்பூர்வ SPM முறையைப் பின்பற்றுகிறது, கல்வி (90%) மற்றும் பாடநெறி சாரா (10%) ஆகியவற்றை மதிப்பிடுகிறது.</p>
+                <div class="feature-list">
+                    <div class="feature-item"><div class="feature-icon"><i class="fas fa-balance-scale"></i></div><div class="feature-title">எடையுள்ள கணக்கீடு</div><p>துல்லியமான 90/10 எடை</p></div>
+                    <div class="feature-item"><div class="feature-icon"><i class="fas fa-chart-line"></i></div><div class="feature-title">நிகழ்நேர முடிவுகள்</div><p>உடனடி காட்சி பதில்</p></div>
+                    <div class="feature-item"><div class="feature-icon"><i class="fas fa-robot"></i></div><div class="feature-title">AI ஆலோசகர்</div><p>ஸ்மார்ட் பல்கலைக்கழக & தொழில் பரிந்துரைகள்</p></div>
+                </div>
+            </div>
+            <div class="page-nav"><button class="nav-btn secondary" id="prev-btn3"><i class="fas fa-arrow-left"></i> முந்தைய</button><button class="nav-btn" id="next-btn3">அடுத்து <i class="fas fa-arrow-right"></i></button></div>
+        </div>
+        
+        <!-- Page 4: AI Career Advisor -->
+        <div class="page" id="page4">
+            <div class="page-header"><h1>AI தொழில் & பல்கலைக்கழக ஆலோசகர்</h1><p class="description">உங்கள் SPM முடிவுகளின் அடிப்படையில் தனிப்பயனாக்கப்பட்ட பரிந்துரைகளைப் பெறுக</p></div>
+            <div class="ai-advisor-container">
+                <div class="calc-section">
+                    <h3><i class="fas fa-graduation-cap"></i> உங்கள் சுயவிவரம்</h3>
+                    <div class="input-group">
+                        <label>ஆர்வமுள்ள துறை</label>
+                        <select id="field-interest" class="grade-select">
+                            <option value="">தேர்ந்தெடுக்க</option>
+                            <option value="science">அறிவியல்</option>
+                            <option value="engineering">பொறியியல்</option>
+                            <option value="it">தகவல் தொழில்நுட்பம்</option>
+                            <option value="commerce">வணிகம்</option>
+                            <option value="health">சுகாதார அறிவியல்</option>
+                            <option value="arts">கலைகள்</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>உங்கள் மெரிட் மதிப்பெண்</label>
+                        <input type="number" id="total-merit-input" placeholder="மெரிட் மதிப்பெண்ணை உள்ளிடுக" min="0" max="100">
+                    </div>
+                    <div class="input-group">
+                        <label>விருப்பமான இடம்</label>
+                        <select id="preferred-location" class="grade-select">
+                            <option value="">எந்த இடமும்</option>
+                            <option value="kl">கோலாலம்பூர்</option>
+                            <option value="selangor">சிலாங்கூர்</option>
+                            <option value="penang">பினாங்கு</option>
+                            <option value="johor">ஜோகூர்</option>
+                        </select>
+                    </div>
+                    <button id="analyze-btn" class="calculate-btn"><i class="fas fa-robot"></i> பகுப்பாய்வு & பரிந்துரைகளைப் பெறுக</button>
+                </div>
+                <div id="ai-results" style="display: none;">
+                    <div class="total-result-container"><h3>தனிப்பயனாக்கப்பட்ட பரிந்துரைகள்</h3><div class="result-breakdown"><div class="breakdown-item"><span>உங்கள் சுயவிவரம்:</span><span id="profile-type">-</span></div><div class="breakdown-item"><span>மெரிட் மதிப்பெண்:</span><span id="display-merit">-</span></div><div class="breakdown-item"><span>தொழில் பொருத்தம்:</span><span id="career-match">-</span></div></div></div>
+                    <div class="calc-section"><h3>பரிந்துரைக்கப்பட்ட பல்கலைக்கழகங்கள்</h3><div id="university-list"></div></div>
+                    <div class="calc-section"><h3>பரிந்துரைக்கப்பட்ட தொழில் பாதைகள்</h3><div id="career-list"></div></div>
+                    <div class="calc-section"><h3>பரிந்துரைக்கப்பட்ட படிப்புகள்</h3><div id="course-list"></div></div>
+                </div>
+            </div>
+            <div class="page-nav"><button class="nav-btn secondary" id="prev-btn4"><i class="fas fa-arrow-left"></i> முந்தைய</button><button class="nav-btn" id="next-btn4">அடுத்து <i class="fas fa-arrow-right"></i></button></div>
+        </div>
+        
+        <!-- Page 5: Contact -->
+        <div class="page" id="page5">
+            <div class="page-header"><h1>தொடர்பு & குழு</h1><p class="description">உங்கள் கருத்துக்களைப் பகிரவும்</p></div>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <div class="form-group"><label><i class="fas fa-user"></i> உங்கள் பெயர்</label><input type="text" id="name" placeholder="உங்கள் பெயரை உள்ளிடுக"></div>
+                    <div class="form-group"><label><i class="fas fa-envelope"></i> மின்னஞ்சல்</label><input type="email" id="email" placeholder="உங்கள் மின்னஞ்சலை உள்ளிடுக"></div>
+                    <div class="form-group"><label><i class="fas fa-comment"></i> செய்தி</label><textarea id="message" placeholder="உங்கள் செய்தி..."></textarea></div>
+                    <button id="send-btn" class="calculate-btn"><i class="fas fa-paper-plane"></i> செய்தியை அனுப்புக</button>
+                </div>
+                <div class="team-section"><h3>எங்கள் குழு பற்றி</h3><p>MarS ஆல் உருவாக்கப்பட்டது — கல்வி கருவிகளுக்கு அர்ப்பணிக்கப்பட்டது.</p><div class="heart-icon"><i class="fas fa-heart"></i></div></div>
+            </div>
+            <div class="page-nav"><button class="nav-btn secondary" id="prev-btn5"><i class="fas fa-arrow-left"></i> முந்தைய</button><button class="nav-btn" id="next-btn5">அடுத்து <i class="fas fa-arrow-right"></i></button></div>
+        </div>
+    </div>
+    
+    <div class="page-indicator"><div class="page-dot active" data-page="1"></div><div class="page-dot" data-page="2"></div><div class="page-dot" data-page="3"></div><div class="page-dot" data-page="4"></div><div class="page-dot" data-page="5"></div></div>
+    
+    <footer><p>&copy; 2025 @Mer-C. அனைத்து உரிமைகளும் MarS ஆல் பாதுகாக்கப்பட்டவை.</p></footer>
+    
+    <script src="calc.js"></script>
+</body>
+</html>

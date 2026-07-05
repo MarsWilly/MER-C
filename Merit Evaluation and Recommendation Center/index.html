@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MER-C | Language Selection</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 20px; }
+        .language-container { max-width: 1200px; width: 100%; margin: 0 auto; }
+        .hero-section { text-align: center; margin-bottom: 60px; animation: fadeInDown 0.8s ease; }
+        .hero-section h1 { font-size: 3.5rem; color: white; margin-bottom: 15px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+        .hero-section p { font-size: 1.2rem; color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto; }
+        .language-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 50px; }
+        .language-card { background: white; border-radius: 20px; padding: 40px 30px; text-align: center; cursor: pointer; transition: all 0.3s ease; text-decoration: none; display: block; box-shadow: 0 10px 30px rgba(0,0,0,0.2); animation: fadeInUp 0.6s ease backwards; }
+        .language-card:nth-child(1) { animation-delay: 0.1s; }
+        .language-card:nth-child(2) { animation-delay: 0.2s; }
+        .language-card:nth-child(3) { animation-delay: 0.3s; }
+        .language-card:nth-child(4) { animation-delay: 0.4s; }
+        .language-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+        .flag-icon { font-size: 4rem; margin-bottom: 20px; }
+        .language-card h2 { font-size: 2rem; margin-bottom: 10px; color: #2c3e50; }
+        .language-card p { color: #7f8c8d; font-size: 0.9rem; }
+        .language-card.en { border-bottom: 5px solid #1a73e8; }
+        .language-card.ms { border-bottom: 5px solid #e74c3c; }
+        .language-card.zh { border-bottom: 5px solid #f39c12; }
+        .language-card.ta { border-bottom: 5px solid #8e44ad; }
+        .footer { text-align: center; color: rgba(255,255,255,0.7); margin-top: 40px; }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 768px) { .hero-section h1 { font-size: 2rem; } .language-grid { gap: 15px; } .language-card { padding: 25px 20px; } .flag-icon { font-size: 2.5rem; } .language-card h2 { font-size: 1.5rem; } }
+    </style>
+</head>
+<body>
+    <div class="language-container">
+        <div class="hero-section">
+            <h1>🌍 MER-C Merit Calculator</h1>
+            <p>Select your preferred language / Pilih bahasa pilihan anda / 选择您的语言 / உங்கள் விருப்ப மொழியைத் தேர்ந்தெடுக்கவும்</p>
+        </div>
+        <div class="language-grid">
+            <a href="calculator-en.html" class="language-card en"><div class="flag-icon">🇬🇧</div><h2>English</h2><p>SPM Merit Calculation System</p></a>
+            <a href="calculator-ms.html" class="language-card ms"><div class="flag-icon">🇲🇾</div><h2>Bahasa Malaysia</h2><p>Sistem Pengiraan Merit SPM</p></a>
+            <a href="calculator-zh.html" class="language-card zh"><div class="flag-icon">🇨🇳</div><h2>中文</h2><p>SPM绩点计算系统</p></a>
+            <a href="calculator-ta.html" class="language-card ta"><div class="flag-icon">🇱🇰</div><h2>தமிழ்</h2><p>SPM மெரிட்டைக் கணக்கிடும் அமைப்பு</p></a>
+        </div>
+        <div class="footer"><p>&copy; 2025 @Mer-C. All rights reserved by MarS.</p></div>
+    </div>
+</body>
+</html>

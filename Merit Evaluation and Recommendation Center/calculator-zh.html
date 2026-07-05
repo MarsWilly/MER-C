@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MER-C | SPM绩点计算系统 (中文)</title>
+    <link rel="stylesheet" href="calc.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="lang-indicator">
+        <span>🇨🇳 中文</span>
+        <a href="index.html" class="change-lang"><i class="fas fa-globe"></i> 切换语言</a>
+    </div>
+
+    <div class="pages-container">
+        <!-- Page 1: SPM Merit Calculator -->
+        <div class="page active" id="page1">
+            <div class="page-header">
+                <h1>SPM绩点计算 2.0</h1>
+                <p class="description">高等教育机构录取绩点计算系统</p>
+            </div>
+            
+            <div class="greeting-content">
+                <div class="multi-calculator">
+                    <!-- Universal Subjects (40%) -->
+                    <div class="calc-section">
+                        <h3><i class="fas fa-globe"></i> 通用科目 (40%)</h3>
+                        <div class="input-group">
+                            <label>马来语成绩</label>
+                            <select id="bm-grade" class="grade-select">
+                                <option value="0">G (0)</option>
+                                <option value="2">E (2)</option>
+                                <option value="4">D (4)</option>
+                                <option value="6">C (6)</option>
+                                <option value="8">C+ (8)</option>
+                                <option value="10">B (10)</option>
+                                <option value="12">B+ (12)</option>
+                                <option value="14">A- (14)</option>
+                                <option value="16">A (16)</option>
+                                <option value="18" selected>A+ (18)</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>英语成绩</label>
+                            <select id="bi-grade" class="grade-select">
+                                <option value="0">G (0)</option>
+                                <option value="2">E (2)</option>
+                                <option value="4">D (4)</option>
+                                <option value="6">C (6)</option>
+                                <option value="8">C+ (8)</option>
+                                <option value="10">B (10)</option>
+                                <option value="12">B+ (12)</option>
+                                <option value="14">A- (14)</option>
+                                <option value="16">A (16)</option>
+                                <option value="18" selected>A+ (18)</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>数学成绩</label>
+                            <select id="math-grade" class="grade-select">
+                                <option value="0">G (0)</option>
+                                <option value="2">E (2)</option>
+                                <option value="4">D (4)</option>
+                                <option value="6">C (6)</option>
+                                <option value="8">C+ (8)</option>
+                                <option value="10">B (10)</option>
+                                <option value="12">B+ (12)</option>
+                                <option value="14">A- (14)</option>
+                                <option value="16">A (16)</option>
+                                <option value="18" selected>A+ (18)</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>历史成绩</label>
+                            <select id="sejarah-grade" class="grade-select">
+                                <option value="0">G (0)</option>
+                                <option value="2">E (2)</option>
+                                <option value="4">D (4)</option>
+                                <option value="6">C (6)</option>
+                                <option value="8">C+ (8)</option>
+                                <option value="10">B (10)</option>
+                                <option value="12">B+ (12)</option>
+                                <option value="14">A- (14)</option>
+                                <option value="16">A (16)</option>
+                                <option value="18" selected>A+ (18)</option>
+                            </select>
+                        </div>
+                        <div class="calc-result">
+                            通用科目分数: <span id="universal-total">72</span> | 绩点 (40%): <span id="universal-merit">40.00</span>%
+                        </div>
+                    </div>
+                    
+                    <!-- Package Subjects (30%) -->
+                    <div class="calc-section">
+                        <h3><i class="fas fa-book"></i> 配套科目 (30%)</h3>
+                        <div class="input-group">
+                            <label>配套科目 1 成绩</label>
+                            <select id="pakej1-grade" class="grade-select">
+                                <option value="0">G (0)</option>
+                                <option value="2">E (2)</option>
+                                <option value="4">D (4)</option>
+                                <option value="6">C (6)</option>
+                                <option value="8">C+ (8)</option>
+                                <option value="10">B (10)</option>
+                                <option value="12">B+ (12)</option>
+                                <option value="14">A- (14)</option>
+                                <option value="16">A (16)</option>
+                                <option value="18" selected>A+ (18)</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>配套科目 2 成绩</label>
+                            <select id="pakej2-grade" class="grade-select">
+                                <option value="0">G (0)</option>
+                                <option value="2">E (2)</option>
+                                <option value="4">D (4)</option>
+                                <option value="6">C (6)</option>
+                                <option value="8">C+ (8)</option>
+                                <option value="10">B (10)</option>
+                                <option value="12">B+ (12)</option>
+                                <option value="14">A- (14)</option>
+                                <option value="16">A (16)</option>
+                                <option value="18" selected>A+ (18)</option>
+                            </select>
+                        </div>
+                        <div class="calc-result">
+                            配套科目分数: <span id="pakej-markah">36</span> | 绩点 (30%): <span id="pakej-merit">30.00</span>%
+                        </div>
+                    </div>
+                    
+                    <!-- Best Subjects (20%) -->
+                    <div class="calc-section">
+                        <h3><i class="fas fa-star"></i> 最佳科目 (20%)</h3>
+                        <div class="input-group">
+                            <label>最佳科目 1 成绩</label>
+                            <select id="best1-grade" class="grade-select">
+                                <option value="0">G (0)</option>
+                                <option value="2">E (2)</option>
+                                <option value="4">D (4)</option>
+                                <option value="6">C (6)</option>
+                                <option value="8">C+ (8)</option>
+                                <option value="10">B (10)</option>
+                                <option value="12">B+ (12)</option>
+                                <option value="14">A- (14)</option>
+                                <option value="16">A (16)</option>
+                                <option value="18" selected>A+ (18)</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>最佳科目 2 成绩</label>
+                            <select id="best2-grade" class="grade-select">
+                                <option value="0">G (0)</option>
+                                <option value="2">E (2)</option>
+                                <option value="4">D (4)</option>
+                                <option value="6">C (6)</option>
+                                <option value="8">C+ (8)</option>
+                                <option value="10">B (10)</option>
+                                <option value="12">B+ (12)</option>
+                                <option value="14">A- (14)</option>
+                                <option value="16">A (16)</option>
+                                <option value="18" selected>A+ (18)</option>
+                            </select>
+                        </div>
+                        <div class="calc-result">
+                            最佳科目分数: <span id="best-markah">36</span> | 绩点 (20%): <span id="best-merit">20.00</span>%
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Package Type Selector -->
+                <div class="package-type-selector">
+                    <label><i class="fas fa-cogs"></i> STEM配套选项</label>
+                    <div class="package-options">
+                        <label class="package-option selected">
+                            <input type="radio" name="package-type" value="stem-ab" checked>
+                            <span>STEM A&B (2门科目)</span>
+                        </label>
+                        <label class="package-option">
+                            <input type="radio" name="package-type" value="stem-c">
+                            <span>STEM C (2科中取最佳1科)</span>
+                        </label>
+                    </div>
+                    <div class="input-hint">
+                        <strong>STEM A&B:</strong> 选取2门科目 (最高36分)<br>
+                        <strong>STEM C:</strong> 从2科中选取最佳1科 (最高18分)
+                    </div>
+                </div>
+                
+                <div id="formula-breakdown"></div>
+                
+                <!-- Total Result Section -->
+                <div class="total-result-container">
+                    <h3><i class="fas fa-chart-line"></i> 学术绩点结果 (90%)</h3>
+                    <div class="result-breakdown">
+                        <div class="breakdown-item"><span>通用科目绩点 (40%):</span><span id="final-universal">40.00</span>%</div>
+                        <div class="breakdown-item"><span>配套科目绩点 (30%):</span><span id="final-pakej">30.00</span>%</div>
+                        <div class="breakdown-item"><span>最佳科目绩点 (20%):</span><span id="final-best">20.00</span>%</div>
+                        <div class="breakdown-total"><span>学术绩点总分:</span><span id="total-merit">90.00</span>%</div>
+                    </div>
+                    <div class="total-percentage-note">(40% + 30% + 20% = 学术部分最高90%)</div>
+                </div>
+                
+                <div class="info-box">
+                    <h4><i class="fas fa-info-circle"></i> 完整计算方法</h4>
+                    <p><strong>步骤 1:</strong> 从此页面获取学术分数 (最高90%)</p>
+                    <p><strong>步骤 2:</strong> 前往第2页添加课外活动分数 (0-10%)</p>
+                    <p><strong>步骤 3:</strong> 最终总绩点 = 学术 (90%) + 课外活动 (10%) = 100%</p>
+                    <button class="nav-btn" onclick="goToPage(2)"><i class="fas fa-calculator"></i> 下一步: 添加课外活动分数</button>
+                </div>
+            </div>
+            
+            <div class="page-nav">
+                <button class="nav-btn secondary" id="prev-btn1" disabled><i class="fas fa-arrow-left"></i> 上一页</button>
+                <button class="nav-btn" id="next-btn1">下一页 <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+        
+        <!-- Page 2: Co-curricular Calculator -->
+        <div class="page" id="page2">
+            <div class="page-header">
+                <h1>绩点计数器</h1>
+                <p class="description">添加课外活动分数 (0-10%) 到您的学术分数</p>
+            </div>
+            <div class="calculator-container">
+                <div class="input-group">
+                    <div class="input-label"><span>学术分数 (90%)</span><span class="weight-badge">来自第1页</span></div>
+                    <input type="number" id="primary-input" placeholder="输入学术分数 (0-90)" min="0" max="90" step="0.01" value="90.00">
+                    <div class="input-hint">从第1页复制学术分数 (0-90)</div>
+                    <div class="error-message" id="primary-error">请输入0到90之间的有效数字</div>
+                </div>
+                <div class="input-group">
+                    <div class="input-label"><span>课外活动分数 (10%)</span><span class="weight-badge">由老师提供</span></div>
+                    <input type="number" id="secondary-input" placeholder="输入课外活动分数 (0-10)" min="0" max="10" step="0.01" value="10.00">
+                    <div class="input-hint">输入老师给出的课外活动分数 (0-10)</div>
+                    <div class="error-message" id="secondary-error">请输入0到10之间的有效数字</div>
+                </div>
+                <button id="calculate-btn" class="calculate-btn"><i class="fas fa-calculator"></i> 计算最终总绩点</button>
+                <div class="result-container"><div class="result-label">您的最终总绩点</div><div class="result-value"><span id="result">100.00</span><span class="result-percent">%</span></div></div>
+                <div class="formula"><p><strong>公式:</strong> (学术 90%) + (课外活动 10%) = 最终总绩点 100%</p></div>
+            </div>
+            <div class="page-nav"><button class="nav-btn secondary" id="prev-btn2"><i class="fas fa-arrow-left"></i> 上一页</button><button class="nav-btn" id="next-btn2">下一页 <i class="fas fa-arrow-right"></i></button></div>
+        </div>
+        
+        <!-- Page 3: About -->
+        <div class="page" id="page3">
+            <div class="page-header"><h1>关于此计算器</h1><p class="description">了解绩点百分比的计算方法</p></div>
+            <div class="about-content">
+                <p>绩点百分比计算器遵循马来西亚机构使用的官方SPM系统，评估学术 (90%) 和课外活动 (10%)。</p>
+                <div class="feature-list">
+                    <div class="feature-item"><div class="feature-icon"><i class="fas fa-balance-scale"></i></div><div class="feature-title">加权计算</div><p>精确的90/10权重</p></div>
+                    <div class="feature-item"><div class="feature-icon"><i class="fas fa-chart-line"></i></div><div class="feature-title">实时结果</div><p>即时视觉反馈</p></div>
+                    <div class="feature-item"><div class="feature-icon"><i class="fas fa-robot"></i></div><div class="feature-title">AI顾问</div><p>智能大学和职业建议</p></div>
+                </div>
+            </div>
+            <div class="page-nav"><button class="nav-btn secondary" id="prev-btn3"><i class="fas fa-arrow-left"></i> 上一页</button><button class="nav-btn" id="next-btn3">下一页 <i class="fas fa-arrow-right"></i></button></div>
+        </div>
+        
+        <!-- Page 4: AI Career Advisor -->
+        <div class="page" id="page4">
+            <div class="page-header"><h1>AI职业与大学顾问</h1><p class="description">根据您的SPM成绩获取个性化建议</p></div>
+            <div class="ai-advisor-container">
+                <div class="calc-section">
+                    <h3><i class="fas fa-graduation-cap"></i> 您的资料</h3>
+                    <div class="input-group">
+                        <label>兴趣领域</label>
+                        <select id="field-interest" class="grade-select">
+                            <option value="">选择您的兴趣</option>
+                            <option value="science">科学</option>
+                            <option value="engineering">工程</option>
+                            <option value="it">信息技术</option>
+                            <option value="commerce">商业</option>
+                            <option value="health">健康科学</option>
+                            <option value="arts">人文艺术</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>您的绩点分数</label>
+                        <input type="number" id="total-merit-input" placeholder="输入绩点分数" min="0" max="100">
+                    </div>
+                    <div class="input-group">
+                        <label>首选地点</label>
+                        <select id="preferred-location" class="grade-select">
+                            <option value="">任何地点</option>
+                            <option value="kl">吉隆坡</option>
+                            <option value="selangor">雪兰莪</option>
+                            <option value="penang">槟城</option>
+                            <option value="johor">柔佛</option>
+                        </select>
+                    </div>
+                    <button id="analyze-btn" class="calculate-btn"><i class="fas fa-robot"></i> 分析并获取建议</button>
+                </div>
+                <div id="ai-results" style="display: none;">
+                    <div class="total-result-container"><h3>个性化建议</h3><div class="result-breakdown"><div class="breakdown-item"><span>您的资料:</span><span id="profile-type">-</span></div><div class="breakdown-item"><span>绩点分数:</span><span id="display-merit">-</span></div><div class="breakdown-item"><span>职业匹配:</span><span id="career-match">-</span></div></div></div>
+                    <div class="calc-section"><h3>推荐大学</h3><div id="university-list"></div></div>
+                    <div class="calc-section"><h3>建议职业路径</h3><div id="career-list"></div></div>
+                    <div class="calc-section"><h3>推荐课程</h3><div id="course-list"></div></div>
+                </div>
+            </div>
+            <div class="page-nav"><button class="nav-btn secondary" id="prev-btn4"><i class="fas fa-arrow-left"></i> 上一页</button><button class="nav-btn" id="next-btn4">下一页 <i class="fas fa-arrow-right"></i></button></div>
+        </div>
+        
+        <!-- Page 5: Contact -->
+        <div class="page" id="page5">
+            <div class="page-header"><h1>联系与团队</h1><p class="description">分享您的反馈</p></div>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <div class="form-group"><label><i class="fas fa-user"></i> 您的姓名</label><input type="text" id="name" placeholder="输入您的姓名"></div>
+                    <div class="form-group"><label><i class="fas fa-envelope"></i> 电子邮箱</label><input type="email" id="email" placeholder="输入您的邮箱"></div>
+                    <div class="form-group"><label><i class="fas fa-comment"></i> 留言</label><textarea id="message" placeholder="您的留言..."></textarea></div>
+                    <button id="send-btn" class="calculate-btn"><i class="fas fa-paper-plane"></i> 发送消息</button>
+                </div>
+                <div class="team-section"><h3>关于我们的团队</h3><p>由 MarS 开发 — 致力于教育工具。</p><div class="heart-icon"><i class="fas fa-heart"></i></div></div>
+            </div>
+            <div class="page-nav"><button class="nav-btn secondary" id="prev-btn5"><i class="fas fa-arrow-left"></i> 上一页</button><button class="nav-btn" id="next-btn5">下一页 <i class="fas fa-arrow-right"></i></button></div>
+        </div>
+    </div>
+    
+    <div class="page-indicator"><div class="page-dot active" data-page="1"></div><div class="page-dot" data-page="2"></div><div class="page-dot" data-page="3"></div><div class="page-dot" data-page="4"></div><div class="page-dot" data-page="5"></div></div>
+    
+    <footer><p>&copy; 2025 @Mer-C. 版权所有 MarS.</p></footer>
+    
+    <script src="calc.js"></script>
+</body>
+</html>
